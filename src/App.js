@@ -1,30 +1,20 @@
 import "./App.css";
-import { Button, Typography, styled } from "@mui/material";
-import SettingsIcon from "@mui/icons-material/Settings";
-import AddIcon from "@mui/icons-material/Add";
+import { Stack, Box } from "@mui/material";
+import Sidebar from "./Components/Sidebar";
+import Rightbar from "./Components/Rightbar";
+import Feed from "./Components/Feed";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
-    <div className="">
-      <Button variant="text">Text</Button>
-      <Button
-        variant="contained"
-        startIcon={<SettingsIcon />}
-        color="secondary"
-        size="small"
-      >
-        Settings
-      </Button>
-      <Button
-        variant="contained"
-        color="success"
-        size="small"
-        startIcon={<AddIcon />}
-      >
-        Add New Post
-      </Button>
-      <Typography variant="h1">h1. Heading</Typography>
-    </div>
+    <Box>
+      <Navbar />
+      <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </Stack>
+    </Box>
   );
 }
 
