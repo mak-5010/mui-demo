@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import avatar from "../assets/images/avatar.svg";
 import { Code, Notifications, Mail } from "@mui/icons-material";
 import {
   AppBar,
@@ -23,7 +24,7 @@ function Navbar() {
   const Search = styled("div")(({ theme }) => ({
     backgroundColor: "#fff",
     padding: "0 10px",
-    borderRadius: "3px",
+    borderRadius: theme.shape.borderRadius,
     width: "40%",
   }));
 
@@ -64,16 +65,13 @@ function Navbar() {
           </Badge>
           <Avatar
             sx={{ width: 30, height: 30 }}
-            src="../assets/images/77496744.svg"
+            src={avatar}
             onClick={() => setMenuOpen(true)}
           />
         </Icons>
         <UserBox onClick={() => setMenuOpen(true)}>
-          <Avatar
-            sx={{ width: 30, height: 30 }}
-            src="../assets/images/77496744.svg"
-          />
-          <Typography variant="span">mak</Typography>
+          <Avatar sx={{ width: 30, height: 30 }} src={avatar} />
+          <Typography variant="span">Misbah A K</Typography>
         </UserBox>
       </StyledToolbar>
       <Menu
